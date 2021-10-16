@@ -1,0 +1,22 @@
+[include]
+	# Allows using different identity per PC.
+	path = ~/.gitconfig-user
+[init]
+	defaultBranch = master
+[alias]
+	co = checkout
+	br = branch
+	aa = add .
+	ci = commit
+	st = status
+	pb = !git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d
+	tree = log --graph --decorate --pretty=oneline --abbrev-commit
+	rename = branch -m
+[pull]
+	rebase = true
+[push]
+	default = current
+[fetch]
+	prune = true
+[diff]
+	colorMoved = zebra

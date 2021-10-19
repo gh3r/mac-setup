@@ -15,7 +15,7 @@
 [pull]
 	rebase = true
 [push]
-	default = current
+	default = simple
 [fetch]
 	prune = true
 [diff]

@@ -1,5 +1,11 @@
 # mac-setup
 
+## requirements
+
+* brew
+* mackup
+* antigen
+
 ## dotfiles quick start
 
 ```bash

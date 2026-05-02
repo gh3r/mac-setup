@@ -127,6 +127,9 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # [custom aliases]
 alias zshconfig="vim ~/.zshrc"
 
+# Load asdf
+. $(brew --prefix asdf)/libexec/asdf.sh
+
 # Loads additional local zsh config that is not synced via mackup
 if [[ -f "$HOME/.zshlocal" ]]; then
   source $HOME/.zshlocal

@@ -131,6 +131,11 @@ alias zshlocal="vim ~/.zshlocal"
 # Load asdf
 . $(brew --prefix asdf)/libexec/asdf.sh
 
+# Golang related settings
+if command -v go >/dev/null 2>&1; then
+  export PATH="$PATH:$(go env GOPATH)/bin"
+fi
+
 # Loads additional local zsh config that is not synced via mackup
 if [[ -f "$HOME/.zshlocal" ]]; then
   source $HOME/.zshlocal

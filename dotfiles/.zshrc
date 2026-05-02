@@ -126,6 +126,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # [custom aliases]
 alias zshconfig="vim ~/.zshrc"
+alias zshlocal="vim ~/.zshlocal"
 
 # Load asdf
 . $(brew --prefix asdf)/libexec/asdf.sh

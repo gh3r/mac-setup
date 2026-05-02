@@ -125,7 +125,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # [custom aliases]
-alias zshconfig="code ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
 
 # Loads additional local zsh config that is not synced via mackup
 if [[ -f "$HOME/.zshlocal" ]]; then

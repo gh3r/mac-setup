@@ -1,6 +1,6 @@
 ## Antigen
 # Use antigen for oh-my-zsh management
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
@@ -19,7 +19,7 @@ antigen apply
 
 ## oh-my-zsh config
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 # export ZSH="/Users/marcin/.oh-my-zsh"
@@ -125,20 +125,16 @@ antigen apply
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # [custom aliases]
-alias zshconfig="code ~/.zshrc"
+alias zshconfig="vim ~/.zshrc"
+alias zshlocal="vim ~/.zshlocal"
 
-# nvm config [installed via brew]
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Load asdf
+. $(brew --prefix asdf)/libexec/asdf.sh
 
-# pyenv config [installed via brew]
-export PATH="$HOME/.pyenv/shims:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-# pyenv-virtualenv: prompt changing will be removed from future release. configure 
-# export PYENV_VIRTUALENV_DISABLE_PROMPT=1 
-# to simulate the behavior.
+# Golang related settings
+if command -v go >/dev/null 2>&1; then
+  export PATH="$PATH:$(go env GOPATH)/bin"
+fi
 
 # Loads additional local zsh config that is not synced via mackup
 if [[ -f "$HOME/.zshlocal" ]]; then

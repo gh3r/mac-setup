@@ -127,11 +127,6 @@ antigen apply
 # [custom aliases]
 alias zshconfig="code ~/.zshrc"
 
-# nvm config [installed via brew]
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 # pyenv config [installed via brew]
 export PATH="$HOME/.pyenv/shims:$PATH"
 eval "$(pyenv init -)"

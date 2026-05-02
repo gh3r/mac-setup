@@ -127,14 +127,6 @@ antigen apply
 # [custom aliases]
 alias zshconfig="code ~/.zshrc"
 
-# pyenv config [installed via brew]
-export PATH="$HOME/.pyenv/shims:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-# pyenv-virtualenv: prompt changing will be removed from future release. configure 
-# export PYENV_VIRTUALENV_DISABLE_PROMPT=1 
-# to simulate the behavior.
-
 # Loads additional local zsh config that is not synced via mackup
 if [[ -f "$HOME/.zshlocal" ]]; then
   source $HOME/.zshlocal

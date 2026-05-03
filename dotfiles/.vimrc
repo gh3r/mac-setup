@@ -7,6 +7,10 @@ set backspace=indent,eol,start
 set number
 set ruler
 
+" ## Column
+set colorcolumn=80
+highlight ColorColumn ctermbg=darkgrey guibg=darkgrey
+
 
 " ## Spell
 " This will work only on commit messages.

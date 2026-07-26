@@ -129,7 +129,11 @@ alias zshconfig="vim ~/.zshrc"
 alias zshlocal="vim ~/.zshlocal"
 
 # Load asdf
-. $(brew --prefix asdf)/libexec/asdf.sh
+if [ -f "$(brew --prefix asdf 2>/dev/null)/libexec/asdf.sh" ]; then
+  . "$(brew --prefix asdf)/libexec/asdf.sh"  # asdf <= 0.15 ships asdf.sh
+else
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"  # asdf >= 0.16 (Go rewrite): shims on PATH is all that's needed
+fi
 
 # Golang related settings
 if command -v go >/dev/null 2>&1; then

@@ -3,16 +3,18 @@
 ## requirements
 
 * brew
-* mackup
+* chezmoi
 * antigen
 
-## dotfiles quick start
+## quick start
 
 ```bash
-brew install mackup
-cp ./dotfiles/.mackup.cfg ~/
-mackup restore
+brew install chezmoi
+chezmoi init --apply git@github.com:gh3r/mac-setup.git
 ```
+
+See [docs/chezmoi.md](docs/chezmoi.md) for day-to-day commands and conventions.
+
 
 ## screenshots dir
 

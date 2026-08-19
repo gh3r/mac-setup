@@ -4,12 +4,12 @@
 
 * brew
 * chezmoi
-* antigen
+* antidote
 
 ## quick start
 
 ```bash
-brew install chezmoi
+brew install chezmoi antidote
 chezmoi init --apply git@github.com:gh3r/mac-setup.git
 ```
 

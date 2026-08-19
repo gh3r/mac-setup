@@ -1,21 +1,21 @@
-## Antigen
-# Use antigen for oh-my-zsh management
-source /opt/homebrew/share/antigen/antigen.zsh
-
-# Load the oh-my-zsh's library.
-antigen use oh-my-zsh
-
-# Install omz plugins
-antigen bundle git
-antigen bundle macos
-antigen bundle zsh-users/zsh-autosuggestions
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Select prompt theme
-antigen theme robbyrussell
-
-# Apply all commands
-antigen apply
+## zsh plugins
+# antidote is the plugin manager, bundle list lives in ~/.zsh_plugins.txt
+if [[ -f /opt/homebrew/opt/antidote/share/antidote/antidote.zsh ]]; then
+  # ez-compinit handles compinit, cached dump refreshes on the first shell each day
+  zstyle ':plugin:ez-compinit' 'use-cache' 'yes'
+  source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
+  antidote load
+# transitional fallback, antigen is unmaintained and brew disables it 2026-11-22
+elif [[ -f /opt/homebrew/share/antigen/antigen.zsh ]]; then
+  source /opt/homebrew/share/antigen/antigen.zsh
+  antigen use oh-my-zsh
+  antigen bundle git
+  antigen bundle macos
+  antigen bundle zsh-users/zsh-autosuggestions
+  antigen bundle zsh-users/zsh-syntax-highlighting
+  antigen theme robbyrussell
+  antigen apply
+fi
 
 ## oh-my-zsh config
 # If you come from bash you might have to change your $PATH.

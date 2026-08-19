@@ -1,8 +1,8 @@
 ## zsh plugins
 # antidote is the plugin manager, bundle list lives in ~/.zsh_plugins.txt
 if [[ -f /opt/homebrew/opt/antidote/share/antidote/antidote.zsh ]]; then
-  # omz plugins call compdef, so completions have to be initialized first
-  autoload -Uz compinit && compinit
+  # ez-compinit handles compinit, cached dump refreshes on the first shell each day
+  zstyle ':plugin:ez-compinit' 'use-cache' 'yes'
   source /opt/homebrew/opt/antidote/share/antidote/antidote.zsh
   antidote load
 # transitional fallback, antigen is unmaintained and brew disables it 2026-11-22

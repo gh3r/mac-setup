@@ -1,5 +1,8 @@
 # antidote plugin list, loaded by ~/.zshrc
 
+# first, it queues compdef calls and runs compinit once everything is loaded
+mattmc3/ez-compinit
+
 # oh-my-zsh lib first, the robbyrussell theme depends on it
 ohmyzsh/ohmyzsh path:lib
 ohmyzsh/ohmyzsh path:plugins/git
